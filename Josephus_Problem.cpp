@@ -67,7 +67,7 @@ unsigned josephus (unsigned n, unsigned i){
 			if (q == n+1) q -= n;//automatically "overflows" q to prevent std::out_of_range
 		}while( !soldiers.at(q) );//this will advance q until the index matches the next living element
 		if (clock%i == 0){
-			soldiers.at(q) = DEAD;//from testing, it was found that the element at q-1 (and not q) needed to be deleted for proper results
+			soldiers.at(q) = DEAD;
 			have_died++;//Now that we have "killed" 1 soldier, reduce the amount of living soldiers by 1.
 		}
 		clock++;//clock increases every cycle of the loop, until infinity (integer overflow notwithstanding)
